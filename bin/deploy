@@ -25,10 +25,12 @@ fi
 echo "Deploying latest changes: $msg"
 
 # Build the project.
+echo ""
 echo "Building the project..."
 $SCRIPT_DIR/hugo -D
 
 # Commit and push public folder (GitHub Pages repository)
+echo ""
 echo "Uploading to GitHub Page repository..."
 cd $BASE_DIR/public
 git add .
@@ -36,10 +38,12 @@ git commit -m "$msg"
 git push origin master
 
 # Commit and push blog source
+echo ""
 echo "Saving changes to blog repository..."
 cd $BASE_DIR
 git add .
 git commit -m "$msg"
 git push origin master
 
+echo ""
 echo "Done"
