@@ -6,3 +6,4 @@ draft: true
 
 New Blog!
 
+I decided to start a new blog to talk about software development.

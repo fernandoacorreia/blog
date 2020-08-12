@@ -1,0 +1,45 @@
+#!/bin/bash
+#
+# Deploys latest changes.
+#
+set -o nounset -o errexit -o pipefail
+
+trap 'catch' ERR
+
+catch() {
+  echo "" >&2
+  echo "**********************" >&2
+  echo "An error has occurred." >&2
+  echo "**********************" >&2
+  exit 1
+}
+
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+BASE_DIR=$(cd "$SCRIPT_DIR" && cd .. && pwd)
+
+# Set message
+msg="Update on $(date)"
+if [ -n "$*" ]; then
+  msg="$*"
+fi
+echo "Deploying latest changes: $msg"
+
+# Build the project.
+echo "Building the project..."
+$SCRIPT_DIR/hugo -D
+
+# Commit and push public folder (GitHub Pages repository)
+echo "Uploading to GitHub Page repository..."
+cd $BASE_DIR/public
+git add .
+git commit -m "$msg"
+git push origin master
+
+# Commit and push blog source
+echo "Saving changes to blog repository..."
+cd $BASE_DIR
+git add .
+git commit -m "$msg"
+git push origin master
+
+echo "Done"
