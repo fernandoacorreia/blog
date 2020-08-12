@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# Starts hugo server
+#
+set -o nounset -o errexit -o pipefail
+
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+
+$SCRIPT_DIR/hugo server -D
