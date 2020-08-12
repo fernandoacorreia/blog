@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# Runs hugo in a Docker image.
+#
+# See
+# - https://gohugo.io/
+# - https://github.com/klakegg/docker-hugo.
+#
+set -o nounset -o errexit -o pipefail
+
+docker run \
+  --rm \
+  -it \
+  -v $(pwd):/src \
+  klakegg/hugo:0.74.3
