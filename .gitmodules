@@ -4,4 +4,4 @@
 	branch = master
 [submodule "themes/hugo-clarity"]
 	path = themes/hugo-clarity
-	url = git@github.com:fernandoacorreia/blog.git
+	url = git@github.com:fernandoacorreia/hugo-clarity.git
