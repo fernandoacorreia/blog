@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Deploys latest changes.
+# Publishes latest changes.
 #
 set -o nounset -o errexit -o pipefail
 

@@ -16,3 +16,9 @@ bin/hugo
 ```
 bin/server
 ```
+
+### Publish changes to GitHub Pages
+
+```
+bin/publish
+```
