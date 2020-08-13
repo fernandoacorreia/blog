@@ -8,6 +8,6 @@ author = "Fernando Correia"
 
 I've been a software engineer for over 30 years.
 
-Currently I'm a Principal Software Engineer at Domino Data Lab.
+Currently I'm a Principal Software Engineer at Domino Data Lab, where I build a data science platform.
 
 Any opinions expressed in this website are my own, not my employer's.
