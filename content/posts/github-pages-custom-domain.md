@@ -2,7 +2,6 @@
 title: "Custom domain with GitHub Pages"
 date: 2020-08-15T04:35:19Z
 tags: ["blogging", "DNS", "GitHub Pages"]
-draft: true # Sets whether to render this page. Draft of true will not be rendered.
 # description: "Article description." # Description used for search engine.
 # featured: true # Sets if post is a featured post, making appear on the home page side bar.
 # toc: false # Controls if a table of contents should be generated for first-level links automatically.
@@ -19,11 +18,11 @@ draft: true # Sets whether to render this page. Draft of true will not be render
 
 I am hosting my blog on GitHub Pages. I wanted to use my own domain name instead of a `github.io` subdomain.
 
-GitHub's documentation is very helpful. Even so, it took me a few minutes to figure out all the details, so I'm going to
-share what I did.
+GitHub's documentation is very helpful. Even so, it took me some effort to figure out all the details, so I'm going to
+share what I learned.
 
-This instructions are for using an "apex domain" e.g. `fernandocorreia.dev`. The settings are a bit different when
-using a subdomain like `www.fernandocorreia.dev`. Again, GitHub's documentation is very helpful and does a good job of
+These instructions are for using an "apex domain" e.g. `fernandocorreia.dev`. The settings are a bit different when
+using a subdomain like `www.fernandocorreia.dev`. Again, GitHub's [documentation](https://docs.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site) is very helpful and does a good job of
 explaining these differences.
 
 # Step 1: DNS entry for Let's Encrypt
@@ -34,7 +33,7 @@ GitHub Pages integrates with Let's Encrypt to obtain an SSL certificate on your 
 This is extremely helpful because you don't have to pay for the certificate, and you don't have to deal with the details
 of creating it and setting it up, which can be quite involved.
 
-Go to your domain DNS provider and add CAA record following this pattern:
+Go to your domain DNS provider and add a CAA record following this pattern:
 
 ```
 DOMAIN CAA 0 issue “letsencrypt.org”
@@ -42,9 +41,9 @@ DOMAIN CAA 0 issue “letsencrypt.org”
 
 For example, see this picture showing how I created that record on my DNS provider (Namecheap):
 
-TODO: Insert picture.
+![CAA record for GitHub Pages and Let's Encrypt on Namecheap](/images/github-pages-caa-record.png)
 
-Hint: If by any chance you had already configured the domain on GitHub (explained in the next step), just delete your `CNAME` file from your GitHub
+Hint: If by any chance you had already configured the domain on GitHub (explained on the next step), just delete your `CNAME` file from your GitHub
 Pages repository before proceeding:
 
 ```
@@ -63,7 +62,7 @@ To be clear, in my case that was on this URL: https://github.com/fernandoacorrei
 
 Type the domain name in the "Custom domain" field and press Save (see the pictur below).
 
-TODO: Insert image.
+![GitHub Pages custom domain setting](/images/github-pages-domain-setting.png)
 
 This will create a commit that adds a file named `CNAME` in the root of your repository, like this:
 
@@ -87,7 +86,7 @@ That will point your domain to GitHub Page's servers.
 
 See this example of how I set that up on Namecheap:
 
-TODO: Insert picture
+![A records for GitHub Pages on Namecheap](/images/github-pages-a-records.png)
 
 You can use the `dig` command to check that the settings are in effect:
 
@@ -106,7 +105,7 @@ settings (the previous step). That's why we're jumping back and forth between DN
 
 Back to your GitHub repository's Settings page, turn on the "Enforce HTTPS" field under the "GitHub Pages" section:
 
-TODO: add picture
+![GitHub Pages HTTPS setting](/images/github-pages-https-setting.png)
 
 Hint: If the field is disabled (i.e. can't be changed), wait a few minutes for your DNS changes to be propagated,
 refresh the Settings page and try again.
@@ -114,7 +113,7 @@ refresh the Settings page and try again.
 # Step 5: Pull changes to GitHub repository
 
 If you use a static site generator (like [Hugo](https://gohugo.io/)), pull the latest commit of your GitHub Pages
-repository so that it pulls the recently creates `CNAME` file.
+repository so that it pulls the recently created `CNAME` file.
 
 If you forget to do that, when the static site generator modifies files in your GitHub Pages repository, and you try to
 push those changes to GitHub, you'll get a merge conflict. In that case, fetch from upstream and rebase.
@@ -129,7 +128,7 @@ E.g. in my case my GitHub Pages repository is a submodule of my static site's re
 # Trying it out
 
 At this point, your DNS provider should be pointing your domain name to GitHub Pages, and GitHub pages should be aware
-of it, and also it should have created an SSL certificate, so try accessing your website like this:
+of it, and also it should have created an SSL certificate. You are ready to try to access your website like this:
 
 https://fernandocorreia.dev/
 
