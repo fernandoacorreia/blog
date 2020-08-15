@@ -12,6 +12,6 @@ docker run \
   --rm \
   -it \
   --user $(id -u):$(id -g) \
-  -v $(pwd):/src \
+  -v "$(pwd)":"$(pwd)" \
   -p 1313:1313 \
-  klakegg/hugo:0.74.3-ext-alpine "$@"
+  klakegg/hugo:0.74.3-ext-alpine --source "$(pwd)" "$@"
