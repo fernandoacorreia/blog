@@ -14,4 +14,5 @@ docker run \
   --user $(id -u):$(id -g) \
   -v "$(pwd)":"$(pwd)" \
   -p 1313:1313 \
-  klakegg/hugo:0.74.3-ext-alpine --source "$(pwd)" "$@"
+  --workdir "$(pwd)" \
+  klakegg/hugo:0.74.3-ext-alpine "$@"
