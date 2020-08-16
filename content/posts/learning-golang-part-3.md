@@ -1,8 +1,8 @@
 ---
 title: "Learning Golang: Packages" # Title of the blog post.
 date: 2020-08-16T02:12:03Z # Date of post creation.
+categories: ["learning golang"]
 tags: ["Untagged"]
-draft: true # Sets whether to render this page. Draft of true will not be rendered.
 codeLineNumbers: true
 # description: "Article description." # Description used for search engine.
 # featured: true # Sets if post is a featured post, making appear on the home page side bar.

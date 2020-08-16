@@ -1,6 +1,7 @@
 ---
 title: "Learning Golang: Compiling and running Go programs" # Title of the blog post.
 date: 2020-08-16T01:55:20Z # Date of post creation.
+categories: ["learning golang"]
 tags: ["Untagged"]
 # description: "Article description." # Description used for search engine.
 # featured: true # Sets if post is a featured post, making appear on the home page side bar.
