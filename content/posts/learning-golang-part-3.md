@@ -93,7 +93,7 @@ import (
 
 func main() {
   fmt.Println("Hello, World!")
-  fmt.Println("The time is now ", t.Now())
+  fmt.Println("The time is now", t.Now())
 }
 ```
 
@@ -111,7 +111,7 @@ This is a sample output of the program above:
 ```
 $ go run main.go
 Hello, World!
-The time is now  2020-08-16 18:07:24.180778888 +0000 UTC m=+0.000097040
+The time is now 2020-08-16 18:07:24.180778888 +0000 UTC m=+0.000097040
 ```
 
 # Takeaways
