@@ -27,7 +27,7 @@ echo "Deploying latest changes: $msg"
 # Build the project.
 echo ""
 echo "Building the project..."
-$SCRIPT_DIR/hugo -D
+$SCRIPT_DIR/hugo
 
 # Commit and push public folder (GitHub Pages repository)
 echo ""
