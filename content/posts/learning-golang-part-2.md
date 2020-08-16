@@ -58,3 +58,11 @@ Hello World
 ```
 
 `go run` does **not** create a binary in the current folder.
+
+# Takeaways
+
+- `go build` will compile and produce a binary.
+- `go run` will compile and run without producing a binary.
+
+This looks like a pretty handy workflow to me. What do you think? How does that compare to your experience with other
+languages? If you're a seasoned Go programmer, what would you add to these notes?
