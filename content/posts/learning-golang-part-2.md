@@ -26,6 +26,8 @@ An individual Go source file can be compiled with the `go build` command:
 go build {filename}.go
 ```
 
+That will produce an executable binary file if the source's package is `main` (see [Part 3](/posts/learning-golang-part-3/) for more on packages).
+
 The resulting binary can be executed with this command:
 
 ```
