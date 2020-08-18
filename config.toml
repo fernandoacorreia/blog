@@ -22,6 +22,7 @@ disqusShortname = "fernando-correias-blog" # Comments
     tabWidth = 2
 
 [params]
+copyrightHolder = "Fernando de Alcantara Correia"
 author = "Fernando Correia"
 twitter = "@facorreia"
 largeTwitterCard = false # set to true if you want to show a large twitter card image. The default is a small twitter card image
