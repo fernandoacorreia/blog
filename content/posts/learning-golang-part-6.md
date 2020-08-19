@@ -17,6 +17,8 @@ categories: ["learning golang"]
 #   - Technology
 ---
 
+This is part 6 of my [journey](/categories/learning-golang/) learning Golang.
+
 # Books and tutorials
 
 - [A Tour of Go](https://tour.golang.org/list): An introduction that covers the most important features of the language.
