@@ -148,7 +148,7 @@ SSS 88 el cheapo 8O8O8O88 \\  '.  \|________________________________|
 `)
 }
 ```
-Source: [ascii-art/main.go](https://github.com/fernandoacorreia/learning-go/blob/7c489be6bb0b6625c1f6a8e46f2ae56dfc363035/ascii-art/main.go)
+Source: [learning-go/ascii-art/main.go](https://github.com/fernandoacorreia/learning-go/blob/7c489be6bb0b6625c1f6a8e46f2ae56dfc363035/ascii-art/main.go)
 
 # Takeaways
 
