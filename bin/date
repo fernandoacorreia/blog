@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# Prints the current date and time in the format used in blog entries.
+#
+set -o nounset -o errexit -o pipefail
+
+date --utc +%Y-%m-%dT%H:%M:%SZ
