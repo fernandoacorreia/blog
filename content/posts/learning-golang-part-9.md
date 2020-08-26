@@ -1,8 +1,8 @@
 ---
-title: "Learning Golang: Values and Variables" # Title of the blog post.
-date: 2020-08-24T00:45:00Z # Date of post creation.
-tags: ["Untagged"]
-draft: true # Sets whether to render this page. Draft of true will not be rendered.
+title: "Learning Golang: Numeric data types" # Title of the blog post.
+date: 2020-08-26T03:29:48Z
+tags: ["golang"]
+categories: ["learning golang"]
 # description: "Article description." # Description used for search engine.
 # featured: true # Sets if post is a featured post, making appear on the home page side bar.
 # toc: false # Controls if a table of contents should be generated for first-level links automatically.
@@ -19,19 +19,25 @@ draft: true # Sets whether to render this page. Draft of true will not be render
 
 This is part 9 of my [journey](/categories/learning-golang/) learning Golang.
 
-# Data types
-
 Data types are a designation by a programming language about the kind of values that are being stored.
 
-Go has several basic data types built in.
+Go has several basic data types built in. This article explores Go's basic numeric data types (and Boolean, which is related). See [Go's documentation](https://golang.org/ref/spec#Boolean_types) for more details.
 
-## Integer numbers
+# Boolean values
 
-These represent whole numbers.
+Boolean values can be either `false` (equivalent to 0) or `true` (equivalent to 1). Although in principle they only require
+1 bit of storage, Go uses a byte for convenience reasons.
+
+| Data type | Number of bits | Minimum value | Maximum value  |
+| :-------- | -------------: | ------------: | -------------: |
+| bool      | 8              | `false`       | `true`         |
+
+# Integer numbers
+
+These represent whole numbers. Integer data types have different lenghts and can be signed or unsigned:
 
 | Data type | Number of bits | Minimum value              | Maximum value              |
 | :-------- | -------------: | -------------------------: | -------------------------: |
-| bool      | 1              | 0 (false)                  | 1 (true)                   |
 | int8      | 8              | -128                       | 127                        |
 | int16     | 16             | -32,768                    | 32,767                     |
 | int32     | 32             | -2,147,483,648             | 2,147,483,647              |
@@ -41,62 +47,42 @@ These represent whole numbers.
 | uint32    | 32             | 0                          | 4,294,967,295              |
 | uint64    | 64             | 0                          | 18,446,744,073,709,551,615 |
 
-## Floating-point numbers
+There are also two aliases for the above data types:
 
-These represent numbers that may have a fractional part.
+- `byte`: alias for `uint8`
+- `rune`: alias for `int32` (represents a [Unicode code point](https://www.geeksforgeeks.org/rune-in-golang/) (loosely, a "character")
 
-| Default Header | Left Align | Right Align | Center Align |
-| --- | :-- | --: | :-: |
-| x | x | x | x |
+# Floating-point numbers
 
+These represent numbers that may have a fractional part. They don't have a minimum or maximum value, but they have
+different levels of precision (accuracy) for representing numbers.
 
-## Complex numbers
+| Data type | Number of bits | Precision | Exponent length | Fraction length |
+| :-------- | -------------: | :-------- | --------------: | --------------: |
+| float32   | 32             | [single](https://en.wikipedia.org/wiki/Single-precision_floating-point_format#IEEE_754_single-precision_binary_floating-point_format:_binary32) | 8 | 23 |
+| float64   | 64             | [double](https://en.wikipedia.org/wiki/Double-precision_floating-point_format#IEEE_754_double-precision_binary_floating-point_format:_binary64) | 11 | 52 |
 
-These represent numbers with an imaginary component. They're useful for computations on 2-dimensional space and
-calculations involving square roots.
+Hint: Floating point data types are binary numbers. They can present rounding errors when storing decimal numbers. For
+applications that require guaranteed precision for decimal values (like currency) see the [decimal](https://godoc.org/github.com/shopspring/decimal) package.
 
-# Values
+# Complex numbers
 
-In Go, values can be many things. Just to name a few, values can be numbers (like 109), or text wrapped in quotes (like "Hello world").
+These represent numbers with an [imaginary part](https://en.wikipedia.org/wiki/Complex_number). They're useful for
+computations on 2-dimensional space and calculations involving square roots.
 
-# Literals
-
-Literals are values written in the source code.
-
-# Constants
-
-In addition to literal values (i.e. values directly expressed in the source code), Go also allows "named values", i.e.
-values identified by a name. These named values are called "constants" because the value represented by the name remains
-the same throughout the runtime of the program.
-
-Example:
-
-```go
-package main
-
-import (
-  "fmt"
-)
-
-func main() {
-  const inchesPerFeet = 12
-  fmt.Println("There are", inchesPerFeet, "inches in a foot.")
-}
-```
-
-This program prints `There are 12 inches in a foot.`
-
-# Variables
-
-# Arithmetic
-
-We can perform arithmetic in Go with literals (or named values, covered in the next exercise) using the following operators:
-
-- `+` to add
-- `-` to subtract
-- `*` to multiply
-- `/` to divide
-- `%` to take the remainder (the modulus operator) between two numbers.
+| Data type  | Number of bits | Range |
+| :--------- | -------------: | :-------- |
+| complex64  | 64             | complex numbers with float32 real and imaginary parts |
+| complex128 | 128            | complex numbers with float64 real and imaginary parts |
 
 # Takeaways
 
+Go offers several built-in numeric data types. Each one is suited for different use cases:
+- `bool` for boolean logic (true and false values)
+- signed and unsigned integers of different sizes for fast, memory-efficient arithmetic with whole numbers
+- two levels of precision for numbers with a fractional part
+- two different lengths for complex numbers
+
+This level of specialization can be overwhelming at first, and requires understanding the types and ranges of data that
+the aplication will handle. The trade-off is being able to produce faster-running programs that require less memory in
+comparison with equivalent programs in languages with a more lax type system.
