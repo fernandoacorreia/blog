@@ -1,5 +1,5 @@
 ---
-title: "Learning Golang: Numeric data types" # Title of the blog post.
+title: "Learning Golang: Basic data types" # Title of the blog post.
 date: 2020-08-26T03:29:48Z
 tags: ["golang"]
 categories: ["learning golang"]
@@ -21,9 +21,9 @@ This is part 9 of my [journey](/categories/learning-golang/) learning Golang.
 
 Data types are a designation by a programming language about the kind of values that are being stored.
 
-Go has several basic data types built in. This article explores Go's basic numeric data types (and Boolean, which is related). See [Go's documentation](https://golang.org/ref/spec#Boolean_types) for more details.
+Go has several basic data types built in. This article explores boolean, numeric and string data types. See [Go's documentation](https://golang.org/ref/spec#Boolean_types) for more details.
 
-# Boolean values
+# Boolean data type
 
 Boolean values can be either `false` (equivalent to 0) or `true` (equivalent to 1). Although in principle they only require
 1 bit of storage, Go uses a byte for convenience reasons.
@@ -32,7 +32,14 @@ Boolean values can be either `false` (equivalent to 0) or `true` (equivalent to 
 | :-------- | -------------: | ------------: | -------------: |
 | bool      | 8              | `false`       | `true`         |
 
-# Integer numbers
+# Numeric data types
+
+There are three categories of numeric data types in Go:
+- Integer (whole numbers)
+- Floating point (numbers with a fractionary part)
+- Complex (imaginary numbers)
+
+## Integer numbers
 
 These represent whole numbers. Integer data types have different lenghts and can be signed or unsigned:
 
@@ -47,12 +54,13 @@ These represent whole numbers. Integer data types have different lenghts and can
 | uint32    | 32             | 0                          | 4,294,967,295              |
 | uint64    | 64             | 0                          | 18,446,744,073,709,551,615 |
 
-There are also two aliases for the above data types:
+There are also aliases for some of the above data types:
 
 - `byte`: alias for `uint8`
 - `rune`: alias for `int32` (represents a [Unicode code point](https://www.geeksforgeeks.org/rune-in-golang/) (loosely, a "character")
+- `int`: alias for `int32` or `int64` depending on the platform
 
-# Floating-point numbers
+## Floating-point numbers
 
 These represent numbers that may have a fractional part. They don't have a minimum or maximum value, but they have
 different levels of precision (accuracy) for representing numbers.
@@ -65,7 +73,7 @@ different levels of precision (accuracy) for representing numbers.
 Hint: Floating point data types are binary numbers. They can present rounding errors when storing decimal numbers. For
 applications that require guaranteed precision for decimal values (like currency) see the [decimal](https://godoc.org/github.com/shopspring/decimal) package.
 
-# Complex numbers
+## Complex numbers
 
 These represent numbers with an [imaginary part](https://en.wikipedia.org/wiki/Complex_number). They're useful for
 computations on 2-dimensional space and calculations involving square roots.
@@ -75,14 +83,27 @@ computations on 2-dimensional space and calculations involving square roots.
 | complex64  | 64             | complex numbers with float32 real and imaginary parts |
 | complex128 | 128            | complex numbers with float64 real and imaginary parts |
 
+# String
+
+Go strings are "a read-only slice of bytes", i.e. a contiguous sequence of bytes -- `uint8` integers.
+
+It's important to notice that these can be arbitrary bytes. They don't have to be Unicode code points and they don't
+have to be encoded as UTF-8 or any other encoding. That said, Go's library functions assume that strings are encoded as
+UTF-8. See [this blog post](https://blog.golang.org/strings) for more details.
+
+| Data type | Content       | Length                 |
+| :-------- | :------------ | :--------------------- |
+| string    | bytes (uint8) | 0 to maximum int value |
+
 # Takeaways
 
-Go offers several built-in numeric data types. Each one is suited for different use cases:
+Go offers several built-in data types. Each one is suited for different use cases:
 - `bool` for boolean logic (true and false values)
 - signed and unsigned integers of different sizes for fast, memory-efficient arithmetic with whole numbers
 - two levels of precision for numbers with a fractional part
 - two different lengths for complex numbers
+- `string` for sequences of bytes
 
-This level of specialization can be overwhelming at first, and requires understanding the types and ranges of data that
+This level of specialization (particularly of the numeric data types) can be overwhelming at first, and requires understanding the types and ranges of data that
 the aplication will handle. The trade-off is being able to produce faster-running programs that require less memory in
 comparison with equivalent programs in languages with a more lax type system.
