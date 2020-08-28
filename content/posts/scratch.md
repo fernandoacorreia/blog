@@ -50,6 +50,40 @@ This program prints `There are 12 inches in a foot.`
 
 # Variables
 
+A variable is a named value that can change during the execution of a program. I.e. a variable's value can be updated at
+run time.
+
+## Variable declarations
+
+In Go, variables are declared following this pattern: `var` {identifier} {type}. Examples:
+
+```go
+var songName string
+var lengthOfSong uint16
+var isMusicOver bool
+var songRating float32
+```
+
+## Zero values
+
+If a value is not assigned to the variable when it is declared (like above) then it is initialized with a "zero value".
+The actual value depends on the data type. Generally:
+
+- 0 for numeric data types
+- false for the boolean data type
+- empty string for string data type
+
+## Default values
+
+The initial value of a variable can be assigned when it is declared:
+
+```go
+var shoppingCartQuantity = 1
+var shoppingCartItemName = "cupholder"
+var shoppingCartPrice = 19.99
+var shoppingCartExtendedWarranty = true
+```
+
 # Arithmetic
 
 We can perform arithmetic in Go with literals (or named values, covered in the next exercise) using the following operators:
