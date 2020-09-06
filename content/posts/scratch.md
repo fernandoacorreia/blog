@@ -17,37 +17,6 @@ draft: true # Sets whether to render this page. Draft of true will not be render
 #   - Technology
 ---
 
-# Values
-
-In Go, values can be many things. Just to name a few, values can be numbers (like 109), or text wrapped in quotes (like "Hello world").
-
-# Literals
-
-Literals are values written in the source code.
-
-# Constants
-
-In addition to literal values (i.e. values directly expressed in the source code), Go also allows "named values", i.e.
-values identified by a name. These named values are called "constants" because the value represented by the name remains
-the same throughout the runtime of the program.
-
-Example:
-
-```go
-package main
-
-import (
-  "fmt"
-)
-
-func main() {
-  const inchesPerFeet = 12
-  fmt.Println("There are", inchesPerFeet, "inches in a foot.")
-}
-```
-
-This program prints `There are 12 inches in a foot.`
-
 # Variables
 
 A variable is a named value that can change during the execution of a program. I.e. a variable's value can be updated at
