@@ -80,7 +80,9 @@ func main() {
 # Updating a variable
 
 The `=` symbol assigns a new value to a variable based on the expression at the right side of the statement (i.e. after
-"=").
+"="). `=` is called the "assignment operator". It is the same operator that was used above to assign default values when
+a variable was declared. It can also be used at later parts of the code for updating the value of the variable (i.e.
+assigning a new value to it).
 
 Example:
 
