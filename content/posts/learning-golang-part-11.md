@@ -29,8 +29,8 @@ If a value is not assigned to the variable when it is declared (like above) then
 The actual value depends on the data type. Generally:
 
 - 0 for numeric data types
-- `false` for the boolean data type
-- empty string for string data type
+- `false` for the `boolean` data type
+- empty string (`""`) for `string` data type
 
 # Default values
 
@@ -75,6 +75,30 @@ func main() {
   message := "Hello, world!"
   fmt.Println(message)
 }
+```
+
+Go offers another way to declare and initialize a variable inferring its type:
+
+```go
+package main
+
+import (
+  "fmt"
+)
+
+func main() {
+  var planet = "Earth"        // Inferred type: string
+  var radiusInKm = 6371.009   // Inferred type: float64
+  var daysInTheYear = 365     // Inferred type: int (int64 or int32)
+  var hasMoon = true          // Inferred type: boolean
+  fmt.Printf("%T %T %T %T\n", planet, radiusInKm, daysInTheYear, hasMoon)
+}
+```
+
+The code above prints:
+
+```
+string float64 int bool
 ```
 
 # Updating a variable
