@@ -59,6 +59,10 @@ There are also aliases for some of the above data types:
 - `byte`: alias for `uint8`
 - `rune`: alias for `int32` (represents a [Unicode code point](https://www.geeksforgeeks.org/rune-in-golang/) (loosely, a "character")
 - `int`: alias for `int32` or `int64` depending on the platform
+- `uint`: alias for `uint32` or `uint64` depending on the platform
+
+Most current computers are 64-bit systems. On those systems, `int` and `uint` will be 64-bit integers. On other (older
+or special-purpose) 32-bit systems, `int` and `uint` will be 32 bits in size.
 
 ## Floating-point numbers
 

@@ -101,6 +101,9 @@ The code above prints:
 string float64 int bool
 ```
 
+Notice that values that infer their types from integer literals (like 365 above) will be of type `int`. On most computer
+systems, they will be 64 bits in length. On 32-bit systems, these variables will be 32 bits in length.
+
 # Updating a variable
 
 The `=` symbol assigns a new value to a variable based on the expression at the right side of the statement (i.e. after
