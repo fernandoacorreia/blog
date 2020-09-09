@@ -45,7 +45,8 @@ var shoppingCartExtendedWarranty = true
 
 # Defining multiple variables
 
-Go has a shorthand for declaring several variables in a single statement:
+Go has a shorthand for declaring several variables in a single statement. Use the keyword `var` (or `const`) followed
+by parentheses with each variable on its own line:
 
 ```go
 var (
@@ -55,7 +56,18 @@ var (
 )
 ```
 
-Use the keyword `var` (or `const`) followed by parentheses with each variable on its own line.
+Another way to declare multiple variables in a single statement, initialized with their zero value, is:
+
+```go
+var part1, part2 string
+```
+
+It's also possible to declare multiple variables, while initializing them and letting their types be inferred from the
+value:
+
+```go
+anInteger, aString, aBoolean := 42, "Hello", true
+```
 
 # Shorthand declaration
 

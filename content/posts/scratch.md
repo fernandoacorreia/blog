@@ -28,4 +28,11 @@ We can perform arithmetic in Go with literals (or named values, covered in the n
 - `/` to divide
 - `%` to take the remainder (the modulus operator) between two numbers.
 
+Go has the following arithmetic operations that perform calculations and update the variable’s value:
+
++= to add to the variable.
+-= to subtract from the variable.
+*= to multiply the variable by a factor.
+/= to divide the variable by a dividend.
+
 # Scope (identifiers, variables)
