@@ -56,23 +56,14 @@ func main() {
   // Print out variables
   fmt.Println(
     title,
-    "genre",
-    genre,
-    "written by",
-    writer,
-    "drawn by",
-    artist,
-    "published by",
-    publisher,
-    "on",
-    year,
-    "containing",
-    pageNumber,
-    "pages",
-    "in condition",
-    grade,
-    "price",
-    price,
+    "genre", genre,
+    "written by", writer,
+    "drawn by", artist,
+    "published by", publisher,
+    "on", year,
+    "containing", pageNumber, "pages",
+    "in condition", grade,
+    "price", price,
   )
 
   // Define second comic book
@@ -90,23 +81,14 @@ func main() {
   // Print out variables
   fmt.Println(
     title,
-    "genre",
-    genre,
-    "written by",
-    writer,
-    "drawn by",
-    artist,
-    "published by",
-    publisher,
-    "on",
-    year,
-    "containing",
-    pageNumber,
-    "pages",
-    "in condition",
-    grade,
-    "price",
-    price,
+    "genre", genre,
+    "written by", writer,
+    "drawn by", artist,
+    "published by", publisher,
+    "on", year,
+    "containing", pageNumber, "pages",
+    "in condition", grade,
+    "price", price,
   )
 
   // Define third comic book
@@ -124,26 +106,17 @@ func main() {
   // Print out variables
   fmt.Println(
     title,
-    "genre",
-    genre,
-    "written by",
-    writer,
-    "drawn by",
-    artist,
-    "published by",
-    publisher,
-    "on",
-    year,
-    "containing",
-    pageNumber,
-    "pages",
-    "in condition",
-    grade,
-    "price",
-    price,
+    "genre", genre,
+    "written by", writer,
+    "drawn by", artist,
+    "published by", publisher,
+    "on", year,
+    "containing", pageNumber, "pages",
+    "in condition", grade,
+    "price", price,
   )
 
 }
 ```
 
-Source: [learning-go/comic-mischief/main.go](https://github.com/fernandoacorreia/learning-go/blob/6b190b7778dd20a39045a7746f7b86a53c1701f8/comic-mischief/main.go)
+Source: [learning-go/comic-mischief/main.go](https://github.com/fernandoacorreia/learning-go/blob/36daa970169e2096d3ed07b5f7cb8f6525e2558b/comic-mischief/main.go)
