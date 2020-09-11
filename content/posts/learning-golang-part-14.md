@@ -120,3 +120,11 @@ func main() {
 ```
 
 Source: [learning-go/comic-mischief/main.go](https://github.com/fernandoacorreia/learning-go/blob/36daa970169e2096d3ed07b5f7cb8f6525e2558b/comic-mischief/main.go)
+
+The program prints this out:
+
+```
+Mr. GoToSleep genre Mistery written by Tracey Hatchet drawn by Jewel Tampson published by DizzyBooks Publishing Inc. on 1997 containing 14 pages in condition 6.5 price 20.93
+Epic Vol. 1 genre SciFi written by Ryan N. Shawn drawn by Phoebe Paperclips published by DizzyBooks Publishing Inc. on 2013 containing 160 pages in condition 9 price 100.8
+Ms. Y genre Adventure written by Gordon Ryan drawn by Isobelle Leclair published by Astra Books on 2001 containing 47 pages in condition 8.5 price 75.905
+```
