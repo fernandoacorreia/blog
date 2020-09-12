@@ -26,7 +26,7 @@ copyrightHolder = "Fernando de Alcantara Correia"
 author = "Fernando Correia"
 twitter = "@facorreia"
 largeTwitterCard = false # set to true if you want to show a large twitter card image. The default is a small twitter card image
-introDescription = "Software engineer."
+introDescription = "<p class='post_content'>Principal Software Engineer at <a href='https://www.dominodatalab.com/'>Domino Data Lab</a>.  We're <a href='https://grnh.se/407a3e121us'>hiring</a>!</p>"
 
 # Google analytics Id
 ga_analytics = "XXXXXXXXXX"
