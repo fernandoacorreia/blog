@@ -16,7 +16,7 @@ This article covers the most basic functions for printing out text `Println` and
 
 # Println
 
-The `Println` function prints outs a line of text to the standard output device.
+The [Println](https://golang.org/pkg/fmt/#Println) method prints outs a line of text to the standard output device.
 
 It prints its arguments, with a space between them, and a new line character at the end.
 
@@ -44,7 +44,7 @@ End
 
 # Print
 
-The `Print` function prints out its arguments without adding spaces in between. It also doesn't add a new line
+The [Print](https://golang.org/pkg/fmt/#Print) method prints out its arguments without adding spaces in between. It also doesn't add a new line
 character.
 
 For instance this program:
@@ -71,4 +71,3 @@ Your points: 25750 (HIGH SCORE!)
 
 Notice how the spaces are embedded in the arguments. Also, a line break was not added at the end. The next output would
 continue on the same line.
-
