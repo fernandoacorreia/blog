@@ -40,8 +40,10 @@ prints out:
 I have 10 apples.
 ```
 
-Notice what the `Printf` statement is printing out the value of the `text` variable between single quotes. The `text`
+Notice that the `Printf` statement is printing out the value of the `text` variable between single quotes. The `text`
 variable, in turn, contains the result of the `Sprint` statement.
+
+Also notice how spaces were explicitly added where needed.
 
 # Sprintln
 
@@ -82,7 +84,7 @@ that there is a newline character at the end of the `text` string.
 # Sprintf
 
 The `Sprintf` method returns a formatted string. It interpolates a list of values according to the format specifier (the
-first arguments). It supports the same formatting verbs and modifiers as the [Printf](/posts/learning-golang-part-16/)
+first argument). It supports the same formatting verbs and modifiers as the [Printf](/posts/learning-golang-part-16/)
 method.
 
 For example:
@@ -108,8 +110,8 @@ prints out:
 Value stored in text is: 'I have 10 apples.'
 ```
 
-Notice how the first argument to `Sprintf` is the format specifier, with 2 verbs (`%d` and `$s`) as placeholders, and
-how two other arguments are provided, each providing the value for one of these verbs.
+Notice how the first argument to `Sprintf` is the format specifier, with 2 verbs (`%d` and `%s`) as placeholders, and
+how two other arguments are passed, each providing the value for one of these verbs.
 
 Comparing `Sprintf` to the examples above, we were able to get the string formatted exactly as we wanted without needing
 to add extra space arguments -- at the cost of having to learn a few simple formatting verbs.
@@ -119,7 +121,7 @@ to add extra space arguments -- at the cost of having to learn a few simple form
 Printing out strings to console is useful, for instance for creating a basic command line interface, or for debugging
 purposes.
 
-It is often even more useful to generate a formatted string from one or more values, and assigning that to a variable.
+It is often even more useful to generate a formatted string from one or more values, and to assign that to a variable.
 This way the resulting string value can be used later in the program. For instance for composing the text of an email
 that is going to be sent by the program, or the content of a PDF file that is going to be generated.
 
