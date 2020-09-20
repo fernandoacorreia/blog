@@ -23,6 +23,7 @@ This is part 6 of my [journey](/categories/learning-golang/) learning Golang.
 
 - [A Tour of Go](https://tour.golang.org/list): An introduction that covers the most important features of the language.
 - [An Introduction to Programming in Go](https://www.golang-book.com/books/intro): A free e-book from 2012.
+- [For the Love of Go: Fundamentals](https://bitfieldconsulting.com/books/fundamentals): An interactive introduction to the Go programming language, suitable for complete beginners.
 - [Introducing Go](https://www.oreilly.com/library/view/introducing-go/9781491941997/): An O'Reilly book from 2016.
   "Perfect for beginners familiar with programming basics, this hands-on guide provides an easy introduction to Go."
 
