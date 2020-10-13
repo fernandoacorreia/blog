@@ -139,7 +139,7 @@ func main() {
 Source:
 [learning-go/conditionals/if-else.go](https://github.com/fernandoacorreia/learning-go/blob/8b2734601cf72a7354397a9e7e1080ca0eacadee/conditionals/if-else.go)
 
-When ran repeatedly, the program will produce output like this:
+When executed repeatedly, the program will produce output like this:
 
 ```
 ❯ bin/go run conditionals/if-else.go
@@ -233,6 +233,67 @@ Keep in mind that you can chain as many `else if` statements as necessary, each 
 true for its block to be executed. The sequence may or may not have a final `else` clause not followed by a new `if`
 statement.
 
+# else if chains
+
+`else if` statements can be chained as many times as necessary. The block for the first condition that evaluates to
+`true` will be executed, and the others will be skipped. If no condition is `true`, and there is an `else` clause, its
+block will be executed. If there isn't an `else` clause, then no block will be executed for that chain.
+
+For example:
+
+```go
+package main
+
+import (
+  "os"
+  "bufio"
+  "fmt"
+  "strings"
+)
+
+func main() {
+  // Ask the user to enter a number.
+  reader := bufio.NewReader(os.Stdin)
+  fmt.Print("What position did you finish at? ")
+  positionInput, _ := reader.ReadString('\n')
+  position := strings.TrimSuffix(positionInput, "\n")
+
+  // Print out message for the position.
+  if position == "1" {
+    fmt.Println("Congrats! You finished in first place.")
+  } else if position == "2" {
+    fmt.Println("You were a close second.")
+  } else if position == "3" {
+    fmt.Println("You finished in third.")
+  } else {
+    fmt.Println("Better luck next time!")
+  }
+}
+```
+
+Source:
+[learning-go/conditionals/if-else-chain.go](https://github.com/fernandoacorreia/learning-go/blob/ff5bee3567f191bbd9cc74f655d7d7de8aa09fe2/conditionals/if-else-chain.go)
+
+The program above produces this output:
+
+```
+❯ bin/go run ./conditionals/if-else-chain.go
+What position did you finish at? 1
+Congrats! You finished in first place.
+
+❯ bin/go run ./conditionals/if-else-chain.go
+What position did you finish at? 2
+You were a close second.
+
+❯ bin/go run ./conditionals/if-else-chain.go
+What position did you finish at? 3
+You finished in third.
+
+❯ bin/go run ./conditionals/if-else-chain.go
+What position did you finish at? 4
+Better luck next time!
+```
+
 # Takeaways
 
 - Go provides the `if` keyword for creating a selection strucuture that will only execute a block of statements if a
@@ -244,3 +305,5 @@ statement.
 - If no `if` condition was `true`, and no `else` clause was provided, no statement will be executed.
 - The program flow will continue on the next statement following the end of the entire sequence of `if`, `else if` and
   `else` blocks.
+- the conditions following the `if` can be as complex as necessary. for instance they can use Go's [logical
+  operators](/posts/learning-golang-part-20/) (`&&`, `||`, `!`) to combine multiple boolean values.
