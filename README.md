@@ -5,6 +5,22 @@ Fernando Correia's Blog.
 
 ## Instructions
 
+### Cloning
+
+This repository uses submodules.
+
+Clone it with submodules:
+
+```
+git clone --recurse-submodules git@github.com:fernandoacorreia/blog.git
+```
+
+Or update submodules after cloning:
+
+```
+git submodule update --init --recursive
+```
+
 ### Run hugo
 
 ```
