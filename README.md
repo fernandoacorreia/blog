@@ -45,6 +45,16 @@ bin/server
 bin/publish {commit description}
 ```
 
+If the publication gets stuck and is not uploaded to the [github.io repo](https://github.com/fernandoacorreia/fernandoacorreia.github.io) try this:
+
+```
+cd public
+git push origin HEAD:master
+git checkout master
+git fetch --all
+git reset --hard origin/master
+```
+
 ### Other useful commands
 
 Display current timestamp in a format compatible with blog article metadata:
