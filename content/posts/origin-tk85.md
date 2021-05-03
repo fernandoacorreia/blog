@@ -5,7 +5,7 @@ tags: ["origin"]
 categories: ["personal"]
 ---
 
-The year is 1984. Brazil is under a military dictatorship. As part of their colossal mismanagement of the country's economy, which would result in over 1.2 trillion Dollars in foreign debt at current values, and hiperinflation that reached over 200% a year, the military government had instituted [protectionist measures](https://pt.wikipedia.org/wiki/Pol%C3%ADtica_Nacional_de_Informática) banning imports of computers.
+The year is 1984. Brazil is under a military dictatorship. As part of their colossal mismanagement of the country's economy, which would result in over 1.2 trillion US Dollars in foreign debt at current values, and hiperinflation that reached over 200% a year, the military government had instituted [protectionist measures](https://pt.wikipedia.org/wiki/Pol%C3%ADtica_Nacional_de_Informática) banning imports of computers.
 
 The intent was to preserve national sovereignty by controlling the manufacturing process. This policy would eventually elicit economic [sanctions](https://www.nytimes.com/1987/11/14/business/reagan-imposes-punitive-tariffs-against-brazil.html) by the Reagan government.
 
