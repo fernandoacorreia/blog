@@ -1,0 +1,37 @@
+<div class="mermaid">{{ .Inner }}</div>
+{{- if not (.Page.Store.Get "hasMermaid") -}}
+{{- .Page.Store.Set "hasMermaid" true -}}
+<style>
+  div.mermaid {
+    margin: 1.5rem auto;
+    text-align: center;
+    white-space: pre;
+  }
+  div.mermaid svg { max-width: 100%; height: auto; }
+</style>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  const themeFor = () => {
+    const mode = getComputedStyle(document.documentElement)
+      .getPropertyValue('--color-mode').replace(/["'\s]/g, '');
+    return mode === 'dim' ? 'dark' : 'default';
+  };
+  const nodes = document.querySelectorAll('div.mermaid');
+  nodes.forEach((el) => { el.dataset.source = el.textContent; });
+  const render = () => {
+    mermaid.initialize({ startOnLoad: false, theme: themeFor() });
+    nodes.forEach((el) => {
+      el.removeAttribute('data-processed');
+      el.innerHTML = el.dataset.source;
+    });
+    mermaid.run({ nodes });
+  };
+  render();
+  new MutationObserver((muts) => {
+    for (const m of muts) {
+      if (m.attributeName === 'data-mode') { render(); break; }
+    }
+  }).observe(document.documentElement, { attributes: true });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', render);
+</script>
+{{- end -}}
