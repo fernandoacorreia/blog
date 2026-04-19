@@ -4,4 +4,8 @@
 #
 set -o nounset -o errexit -o pipefail
 
-date --utc +%Y-%m-%dT%H:%M:%SZ
+if [[ "$(uname)" == "Darwin" ]]; then
+  date -u +%Y-%m-%dT%H:%M:%SZ
+else
+  date --utc +%Y-%m-%dT%H:%M:%SZ
+fi
