@@ -29,6 +29,7 @@ theme = "hugo-clarity"
       unsafe = true  # allow raw HTML in markdown (matches pre-Hugo-0.60 behavior this site was written against)
 
 [params]
+enforceLightMode = true
 copyrightHolder = "Fernando de Alcantara Correia"
 license = "Licensed under the Creative Commons Attribution 4.0 International (<a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>) License."
 twitter = "@facorreia"
