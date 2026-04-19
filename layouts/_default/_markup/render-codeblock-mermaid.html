@@ -19,7 +19,16 @@
   const nodes = document.querySelectorAll('div.mermaid');
   nodes.forEach((el) => { el.dataset.source = el.textContent; });
   const render = () => {
-    mermaid.initialize({ startOnLoad: false, theme: themeFor() });
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: themeFor(),
+      flowchart: { htmlLabels: false },
+      themeCSS: `
+        .edgeLabel rect, .edgeLabel .labelBkg { fill: none !important; background: transparent !important; }
+        .edgeLabel, .edgeLabel p { background: transparent !important; }
+        .edgeLabel text { transform: translateY(-8px); }
+      `,
+    });
     nodes.forEach((el) => {
       el.removeAttribute('data-processed');
       el.innerHTML = el.dataset.source;
