@@ -27,6 +27,28 @@ All commands are bash wrappers in `bin/`. Hugo runs inside the `hugomods/hugo:da
 
 So the site goes live as soon as step 2 pushes. If step 3 fails, the source repo is out of sync with what's live — re-run or push manually.
 
+### Before publishing
+
+- Stop `bin/server` if it's running. `bin/publish` builds via `bin/hugo`, which binds port 1313 and will fail with `Bind for 0.0.0.0:1313 failed: port is already allocated` if the dev server is up.
+
+### Verify the publish actually happened
+
+After `bin/publish`, the push line for the public repo (step 2) must show a `sha1..sha2  master -> master` range. If it says `Everything up-to-date`, **the site did not publish** — the `public/` submodule was on detached HEAD, the new commit is orphaned, and stale local `master` was pushed instead.
+
+### Recovery: detached HEAD in `public/`
+
+The `public/` submodule frequently sits on detached HEAD (git's default when a parent repo records a submodule at a specific SHA). That's the root cause of the failure above. Recovery recipe is in README.md under "Publish changes to GitHub Pages"; reproduced here so you can run it without switching files:
+
+```
+cd public
+git push origin HEAD:master
+git checkout master
+git fetch --all
+git reset --hard origin/master
+```
+
+You are pre-authorized to run this recipe when the publish verification fails. It is non-destructive: it fast-forwards `origin/master` to the just-built HEAD, then re-syncs the local `master` branch to match.
+
 ## Draft workflow
 
 Posts default to `draft: true` in the archetype. Drafts are **rendered by `bin/server`** (it passes `-D`) but **excluded from the production build** (called by `bin/publish`). Flip `draft: false` before publishing.
