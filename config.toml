@@ -3,11 +3,15 @@
 baseurl = "https://fernandocorreia.dev/"  # Include trailing slash
 title = "Fernando Correia's Blog"
 author = "Fernando Correia"
-copyright = "Copyright © 2020, Fernando de Alcantara Correia; all rights reserved."
+copyright = "Fernando de Alcantara Correia"
 # canonifyurls = true
-paginate = 10
 theme = "hugo-clarity"
-disqusShortname = "fernando-correias-blog" # Comments
+
+[pagination]
+  pagerSize = 10
+
+[services.disqus]
+  shortname = "fernando-correias-blog"
 
 [markup]
   [markup.highlight]
@@ -20,11 +24,13 @@ disqusShortname = "fernando-correias-blog" # Comments
     noClasses = false
     # style = "monokai"
     tabWidth = 2
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # allow raw HTML in markdown (matches pre-Hugo-0.60 behavior this site was written against)
 
 [params]
 copyrightHolder = "Fernando de Alcantara Correia"
 license = "Licensed under the Creative Commons Attribution 4.0 International (<a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>) License."
-author = "Fernando Correia"
 twitter = "@facorreia"
 largeTwitterCard = false # set to true if you want to show a large twitter card image. The default is a small twitter card image
 introDescription = "<p class='post_content'>Principal Software Engineer at <a href='https://www.dominodatalab.com/'>Domino Data Lab</a>.  We're <a href='https://grnh.se/407a3e121us'>hiring</a>!</p>"
@@ -60,3 +66,6 @@ figurePositionLabel = "Figure" # the text before image number e.g Figure 1.0
 
 # Set the collapsed mobile navigation to either appear from the left or the right
 mobileNavigation = "left" # if you prefer right change to 'right'
+
+[params.author]
+name = "Fernando Correia"

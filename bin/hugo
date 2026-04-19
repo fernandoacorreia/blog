@@ -4,15 +4,27 @@
 #
 # See
 # - https://gohugo.io/
-# - https://github.com/klakegg/docker-hugo.
+# - https://docker.hugomods.com/
 #
 set -o nounset -o errexit -o pipefail
 
+# Hugo 0.116+ no longer builds when called with no subcommand (it prints help).
+# Preserve the old `bin/hugo` == "build" UX.
+if [ "$#" -eq 0 ]; then
+  set -- build
+fi
+
+# Allocate a TTY only when stdin is a TTY (so CI and piped runs still work).
+TTY_FLAGS=()
+if [ -t 0 ] && [ -t 1 ]; then
+  TTY_FLAGS=(-it)
+fi
+
 docker run \
   --rm \
-  -it \
+  ${TTY_FLAGS[@]+"${TTY_FLAGS[@]}"} \
   --user $(id -u):$(id -g) \
   -v "$(pwd)":"$(pwd)" \
   -p 1313:1313 \
   --workdir "$(pwd)" \
-  klakegg/hugo:0.74.3-ext-alpine "$@"
+  hugomods/hugo:dart-sass-0.160.1 "$@"

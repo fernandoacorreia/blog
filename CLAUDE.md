@@ -8,7 +8,7 @@ A Hugo static site (Fernando Correia's blog) that publishes to GitHub Pages. Sou
 
 ## Commands
 
-All commands are bash wrappers in `bin/`. Hugo runs inside a Docker image — no Hugo install on the host.
+All commands are bash wrappers in `bin/`. Hugo runs inside the `hugomods/hugo:dart-sass-0.160.1` Docker image (Hugo Extended 0.160.1 + Dart Sass — required by the `hugo-clarity` theme's SCSS) — no Hugo install on the host.
 
 | Command | What it does |
 |---|---|

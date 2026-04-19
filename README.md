@@ -5,7 +5,7 @@ Fernando Correia's Blog.
 
 ## Prerequisites
 
-- [Docker](https://www.docker.com/) — `bin/hugo` and `bin/server` run Hugo inside the `klakegg/hugo:0.74.3-ext-alpine` container, so nothing needs to be installed on the host. Make sure the Docker daemon is running.
+- [Docker](https://www.docker.com/) — `bin/hugo` and `bin/server` run Hugo inside the `hugomods/hugo:dart-sass-0.160.1` container (Hugo Extended 0.160.1 + Dart Sass), so nothing needs to be installed on the host. Make sure the Docker daemon is running.
 - Git — for cloning, submodules, and publishing.
 - Bash — for the helper scripts in `bin/`.
 
