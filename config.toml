@@ -33,7 +33,7 @@ copyrightHolder = "Fernando de Alcantara Correia"
 license = "Licensed under the Creative Commons Attribution 4.0 International (<a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>) License."
 twitter = "@facorreia"
 largeTwitterCard = false # set to true if you want to show a large twitter card image. The default is a small twitter card image
-introDescription = "<p class='post_content'>Principal Software Engineer at <a href='https://www.dominodatalab.com/'>Domino Data Lab</a>.  We're <a href='https://grnh.se/407a3e121us'>hiring</a>!</p>"
+introDescription = "<p class='post_content'>Tech Lead Manager at <a href='https://galileo.ai'>Galileo</a>, building an AI observability and eval engineering platform.</p>"
 
 # Google analytics Id
 ga_analytics = "XXXXXXXXXX"
